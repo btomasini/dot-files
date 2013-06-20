@@ -16,6 +16,9 @@ filetype plugin indent on
 set tabstop=2
 set shiftwidth=2
 set expandtab
-
+map <C-k> <C-w>k
+map <C-j> <C-w>j
+map <C-l> <C-w>l
+map <C-h> <C-w>h
 
 
