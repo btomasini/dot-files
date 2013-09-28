@@ -21,5 +21,9 @@ map <C-l> <C-w>l
 map <C-h> <C-w>h
 let mapleader=","
 inoremap jj <ESC>
-
+autocmd FileType javascript set omnifunc=javascriptcomplete#CompleteJS
+let g:SuperTabDefaultCompletionType = "context"
+let g:tagbar_usearrows = 1
+nnoremap <leader>l :TagbarToggle<CR>
+set backupcopy=yes
 
