@@ -26,4 +26,6 @@ let g:SuperTabDefaultCompletionType = "context"
 let g:tagbar_usearrows = 1
 nnoremap <leader>l :TagbarToggle<CR>
 set backupcopy=yes
+" Set textwidth to 80 on markdown files
+au BufRead,BufNewFile *.md setlocal textwidth=80
 
