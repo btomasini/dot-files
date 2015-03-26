@@ -29,5 +29,7 @@ set backupcopy=yes
 " Set textwidth to 80 on markdown files
 au BufRead,BufNewFile *.md setlocal textwidth=80
 set spell spelllang=en_us
-
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+" select last paste in visual mode
+nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 
