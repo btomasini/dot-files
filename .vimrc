@@ -1,7 +1,7 @@
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree
 set wildmenu
 set wildmode=list:longest
 map <C-n> :NERDTreeToggle<CR>
