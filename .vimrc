@@ -5,7 +5,7 @@ filetype plugin indent on
 set wildmenu
 set wildmode=list:longest
 map <C-n> :NERDTreeToggle<CR>
-color codeschool
+color github
 let g:NERDTreeWinPos = "right"
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
