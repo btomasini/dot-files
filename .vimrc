@@ -28,4 +28,9 @@ nnoremap <leader>l :TagbarToggle<CR>
 set backupcopy=yes
 " Set textwidth to 80 on markdown files
 au BufRead,BufNewFile *.md setlocal textwidth=80
+" Copy just pasted entry
+xnoremap p pgvy
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+" disable fmt on save
+let g:go_fmt_autosave = 0
 
