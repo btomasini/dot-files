@@ -1,11 +1,11 @@
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
-autocmd vimenter * NERDTree
+"autocmd vimenter * NERDTree
 set wildmenu
 set wildmode=list:longest
 map <C-n> :NERDTreeToggle<CR>
-color codeschool
+color github
 let g:NERDTreeWinPos = "right"
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
@@ -33,4 +33,8 @@ xnoremap p pgvy
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 " disable fmt on save
 let g:go_fmt_autosave = 0
+set spell spelllang=en_us
+vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
+" select last paste in visual mode
+nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 
