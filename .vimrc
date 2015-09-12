@@ -28,12 +28,14 @@ nnoremap <leader>l :TagbarToggle<CR>
 set backupcopy=yes
 " Set textwidth to 80 on markdown files
 au BufRead,BufNewFile *.md setlocal textwidth=80
+au BufRead,BufNewFile *.cjsx setfiletype coffee
 " Copy just pasted entry
 xnoremap p pgvy
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 " disable fmt on save
 let g:go_fmt_autosave = 0
-set spell spelllang=en_us
+" Spelling gets in the way of most buffers
+" set spell spelllang=en_us
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 " select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
