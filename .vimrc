@@ -39,4 +39,7 @@ let g:go_fmt_autosave = 0
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 " select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
+" Helps not clutter directories which can affect test runners
+set swapfile
+set dir=~/tmp
 
