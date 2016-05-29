@@ -5,6 +5,7 @@
 function backup_and_copy {
 
 file=$1
+path=$2
 
 existing="$HOME/$file"
 
@@ -15,9 +16,9 @@ fi
 
 if [[ -d "$file" ]] 
 then
-  cp -R $file $HOME
+  cp -R $file $HOME/$path
 else
-  cp $file $HOME
+  cp $file $HOME/$path
 fi
 
 }
@@ -37,5 +38,6 @@ mkdir -p $backupdir
 backup_and_copy .vimrc
 backup_and_copy .vim
 backup_and_copy .vrapperrc
+backup_and_copy .config/fish .config
 
 
