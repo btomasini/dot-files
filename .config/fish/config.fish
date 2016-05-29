@@ -5,5 +5,3 @@ if test -d ~/.rbenv
   status --is-interactive; and . (rbenv init -|psub)
 end
 
-fish_vi_key_bindings
-
