@@ -1,4 +1,3 @@
-set shell=/bin/bash
 execute pathogen#infect()
 syntax on
 filetype plugin indent on
@@ -23,6 +22,7 @@ inoremap jj <ESC>
 let g:SuperTabDefaultCompletionType = "context"
 let g:tagbar_usearrows = 1
 nnoremap <leader>l :TagbarToggle<CR>
+nnoremap <leader>b :ball<CR> <C-w>t <C-w>H
 set backupcopy=yes
 " Set textwidth to 80 on markdown files
 au BufRead,BufNewFile *.md setlocal textwidth=80
@@ -38,6 +38,8 @@ nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 " Helps not clutter directories which can affect test runners
 set swapfile
 set dir=~/tmp
+
+cabbrev E Explore
 
 nmap <F8> :TagbarToggle<CR>
 
