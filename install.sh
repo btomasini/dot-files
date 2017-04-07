@@ -38,6 +38,7 @@ mkdir -p $backupdir
 backup_and_copy .vimrc
 backup_and_copy .vim
 backup_and_copy .vrapperrc
+backup_and_copy .ideavimrc
 backup_and_copy .config/fish .config
 
 
