@@ -30,9 +30,6 @@ au BufRead,BufNewFile *.cjsx setfiletype coffee
 " Copy just pasted entry
 xnoremap p pgvy
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
-" disable fmt on save
-" let g:go_fmt_autosave = 0
-vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
 " select last paste in visual mode
 nnoremap <expr> gb '`[' . strpart(getregtype(), 0, 1) . '`]'
 " Helps not clutter directories which can affect test runners
@@ -112,4 +109,5 @@ endif
 let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 "let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
-
+autocmd QuickFixCmdPost [^l]* nested cwindow
+autocmd QuickFixCmdPost    l* nested lwindow
