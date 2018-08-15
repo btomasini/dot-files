@@ -1,5 +1,6 @@
 execute pathogen#infect()
 syntax on
+au BufReadPost,BufNewFile *.md set nofoldenable | NeoCompleteLock
 filetype plugin indent on
 "autocmd vimenter * NERDTree
 color github
