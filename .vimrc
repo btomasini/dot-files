@@ -2,8 +2,6 @@ execute pathogen#infect()
 syntax on
 filetype plugin indent on
 "autocmd vimenter * NERDTree
-set wildmenu
-set wildmode=list:longest
 color github
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
@@ -27,6 +25,7 @@ set backupcopy=yes
 " Set textwidth to 80 on markdown files
 au BufRead,BufNewFile *.md setlocal textwidth=80
 au BufRead,BufNewFile *.cjsx setfiletype coffee
+au BufRead,BufNewFile *.tft setfiletype tf
 " Copy just pasted entry
 xnoremap p pgvy
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
@@ -97,6 +96,7 @@ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
+autocmd FileType markdown setlocal nofoldenable
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags
@@ -111,3 +111,11 @@ let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
+
+set wildchar=<Tab> wildmenu wildmode=full
+
+set wildcharm=<C-Z>
+nnoremap <F10> :b <C-Z>
+
+au BufRead,BufNewFile *.md setlocal textwidth=80
+
