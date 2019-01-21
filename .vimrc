@@ -27,6 +27,10 @@ set backupcopy=yes
 au BufRead,BufNewFile *.md setlocal textwidth=80
 au BufRead,BufNewFile *.cjsx setfiletype coffee
 au BufRead,BufNewFile *.tft setfiletype tf
+" Enable spell check for markdown files
+autocmd BufRead,BufNewFile *.md setlocal spell
+
+"
 " Copy just pasted entry
 xnoremap p pgvy
 vnoremap <C-r> "hy:%s/<C-r>h//gc<left><left><left>
@@ -120,3 +124,7 @@ nnoremap <F10> :b <C-Z>
 
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
+let &t_ti.="\e[1 q"
+let &t_SI.="\e[5 q"
+let &t_EI.="\e[1 q"
+let &t_te.="\e[0 q"
