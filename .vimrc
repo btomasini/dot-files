@@ -3,7 +3,9 @@ syntax on
 au BufReadPost,BufNewFile *.md set nofoldenable | NeoCompleteLock
 filetype plugin indent on
 "autocmd vimenter * NERDTree
-color github
+set background=dark
+let g:gruvbox_italic=1
+colorscheme gruvbox
 set guioptions-=T " Removes top toolbar
 set guioptions-=r " Removes right hand scroll bar
 set go-=L " Removes left hand scroll bar
@@ -23,12 +25,22 @@ let g:tagbar_usearrows = 1
 nnoremap <leader>l :TagbarToggle<CR>
 nnoremap <leader>b :ball<CR> <C-w>t <C-w>H
 set backupcopy=yes
-" Set textwidth to 80 on markdown files
 au BufRead,BufNewFile *.md setlocal textwidth=80
-au BufRead,BufNewFile *.cjsx setfiletype coffee
 au BufRead,BufNewFile *.tft setfiletype tf
-" Enable spell check for markdown files
+au BufNewFile,BufRead *.ts set filetype=typescript.tsx
+au BufNewFile,BufRead *.tsx set filetype=typescript.tsx
 autocmd BufRead,BufNewFile *.md setlocal spell
+
+let g:closetag_filenames = "*.html,*.xhtml,*.phtml,*.erb,*.jsx,*.tsx"
+let g:closetag_xhtml_filenames = '*.xhtml,*.jsx,*.erb,*.tsx'
+let g:closetag_emptyTags_caseSensitive = 1
+let g:closetag_shortcut = '>'
+let g:closetag_close_shortcut = '<leader>>'
+
+
+let g:prettier#autoformat = 1
+let g:prettier#autoformat_require_pragma = 0
+let g:prettier#autoformat_config_present = 1
 
 "
 " Copy just pasted entry
@@ -43,16 +55,14 @@ set dir=~/tmp
 cabbrev E Explore
 
 nmap <F8> :TagbarToggle<CR>
+nmap <F9> :TsuGeterr<CR>
 
 " Neocomplete
 " Note: This option must set it in .vimrc(_vimrc).  NOT IN .gvimrc(_gvimrc)!
 " Disable AutoComplPop.
 let g:acp_enableAtStartup = 0
-" Use neocomplete.
 let g:neocomplete#enable_at_startup = 1
-" Use smartcase.
 let g:neocomplete#enable_smart_case = 1
-" Set minimum syntax keyword length.
 let g:neocomplete#sources#syntax#min_keyword_length = 3
 let g:neocomplete#lock_buffer_name_pattern = '\*ku\*'
 
@@ -117,10 +127,6 @@ let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
 autocmd QuickFixCmdPost [^l]* nested cwindow
 autocmd QuickFixCmdPost    l* nested lwindow
 
-set wildchar=<Tab> wildmenu wildmode=full
-
-set wildcharm=<C-Z>
-nnoremap <F10> :b <C-Z>
 
 au BufRead,BufNewFile *.md setlocal textwidth=80
 
@@ -128,3 +134,7 @@ let &t_ti.="\e[1 q"
 let &t_SI.="\e[5 q"
 let &t_EI.="\e[1 q"
 let &t_te.="\e[0 q"
+
+if &term =~ '256color'
+  set t_ut=
+endif
