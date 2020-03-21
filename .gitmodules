@@ -21,13 +21,13 @@
 	url = https://github.com/leafgarland/typescript-vim.git
 [submodule ".vim/bundle/tsuquyomi"]
 	path = .vim/bundle/tsuquyomi
-  url = https://github.com/Quramy/tsuquyomi.git
+        url = https://github.com/Quramy/tsuquyomi.git
 [submodule ".vim/bundle/vim-closetag"]
 	path = .vim/bundle/vim-closetag
-  url = https://github.com/alvan/vim-closetag.git
+        url = https://github.com/alvan/vim-closetag.git
 [submodule ".vim/bundle/vim-prettier"]
 	path = .vim/bundle/vim-prettier
-  url = https://github.com/prettier/vim-prettier
+        url = https://github.com/prettier/vim-prettier
 [submodule ".vim/bundle/vim-prettier"]
 	path = .vim/bundle/vimproc.vim
-  url = https://github.com/Shougo/vimproc.vim.git
+        url = https://github.com/Shougo/vimproc.vim.git
